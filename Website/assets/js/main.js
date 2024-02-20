@@ -93,6 +93,34 @@ let swiper = new Swiper(".portfolio_container", {
   },
 });
 
+const CompHeader = document.querySelectorAll(".comp_header")
+function toggleComp() {
+  let childClass = this.childNodes[3].className;
+  switch(childClass) {
+    case 'comp_content comp_open':
+      this.childNodes[3].className = 'comp_content comp_close';
+      break;
+    case 'comp_content comp_close':
+      this.childNodes[3].className = 'comp_content comp_open'
+      break;
+  }
+  let childClass2 = this.childNodes[1].childNodes[3].childNodes[0].className;
+  console.log(childClass2);
+  switch(childClass2) {
+    case  "uil-angle-down comp1_arrow_open skills_arrow":
+      this.childNodes[1].childNodes[3].childNodes[0].className = "uil-angle-down comp1_arrow_close skills_arrow";
+      break;
+    case "uil-angle-down comp1_arrow_close skills_arrow":
+      this.childNodes[1].childNodes[3].childNodes[0].className = "uil-angle-down comp1_arrow_open skills_arrow";
+      break;
+  }
+  console.log(childClass);
+}
+
+CompHeader.forEach((el) => {
+  el.addEventListener('click', toggleComp);
+})
+
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')

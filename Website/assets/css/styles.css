@@ -557,6 +557,20 @@ img {
   transform: rotate(-180deg);
 }
 
+.comp_close{
+  height: 0;
+  overflow: hidden;
+}
+
+.comp_open {
+  height: max-content;
+  margin-bottom: var(--mb-2-5);
+}
+
+.comp1_arrow_open::before {
+  transform: rotate(-180deg);
+}
+
 .qualification_tabs {
   display: flex;
   justify-content: space-evenly;
